@@ -12,12 +12,10 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private Rigidbody rb;
     private float turnSmoothVelocity;
-    private bool isGrounded;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        cameraTransform.position = transform.position + cameraOffset;
     }
 
     void Update()
@@ -40,26 +38,7 @@ public class ThirdPersonMovement : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             rb.MovePosition(rb.position + moveDir.normalized * speed * Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
-        cameraTransform.position = transform.position + cameraOffset;
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-    }
+    
 }
