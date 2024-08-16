@@ -14,14 +14,10 @@ public class CameraFollow : MonoBehaviour
         // Get mouse input for rotating the camera
         float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
         currentYaw += mouseX;
-
-        // Calculate the new position for the camera based on the player's position and rotation
         Quaternion rotation = Quaternion.Euler(0f, currentYaw, 0f);
         Vector3 desiredPosition = player.position + rotation * offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
-
-        // Make the camera look at the player from its new position
         transform.LookAt(player);
     }
 }
