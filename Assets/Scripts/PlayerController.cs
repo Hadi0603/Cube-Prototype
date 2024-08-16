@@ -34,11 +34,25 @@ public class ThirdPersonMovement : MonoBehaviour
                 transform.localScale += new Vector3(0.05f, 0, 0);
             }
         }
-        if(Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Z))
         {
-            if(transform.localScale.x > 1f)
+            if(transform.localScale.x > 0.5f)
             {
                 transform.localScale -= new Vector3(0.05f, 0, 0);
+            }
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (transform.localScale.z < 3f)
+            {
+                transform.localScale += new Vector3(0, 0, 0.05f);
+            }
+        }
+        if (Input.GetKey(KeyCode.X))
+        {
+            if (transform.localScale.z > 0.5f)
+            {
+                transform.localScale -= new Vector3(0, 0, 0.05f);
             }
         }
 
