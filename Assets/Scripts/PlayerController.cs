@@ -22,7 +22,6 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         float horizontal = 0f;
         float vertical = 0f;
-
         if (Input.GetKey(KeyCode.W)) vertical = 1f;
         if (Input.GetKey(KeyCode.S)) vertical = -1f;
         if (Input.GetKey(KeyCode.A)) horizontal = -1f;
