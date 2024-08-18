@@ -68,7 +68,7 @@ public class ThirdPersonMovement : MonoBehaviour
                 transform.localScale -= new Vector3(0, 0.05f, 0);
             }
         }
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             if (transform.localPosition.y < 0.5f)
             {
