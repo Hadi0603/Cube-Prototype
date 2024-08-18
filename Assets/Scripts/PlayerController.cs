@@ -54,6 +54,20 @@ public class ThirdPersonMovement : MonoBehaviour
                 transform.localScale -= new Vector3(0, 0, 0.05f);
             }
         }
+        if (Input.GetKey(KeyCode.F))
+        {
+            if (transform.localScale.y < 3f)
+            {
+                transform.localScale += new Vector3(0, 0.05f, 0);
+            }
+        }
+        if (Input.GetKey(KeyCode.C))
+        {
+            if (transform.localScale.y > 1f)
+            {
+                transform.localScale -= new Vector3(0, 0.05f, 0);
+            }
+        }
 
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         if (direction.magnitude >= 0.1f)
